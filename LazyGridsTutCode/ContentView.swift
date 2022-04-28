@@ -25,7 +25,7 @@ struct ContentView: View {
                 .fill(Color.orange)
                 .frame(height: 200)
             
-            LazyVGrid(columns: columns, alignment: .center, spacing: 6, pinnedViews: [], content: {
+            LazyVGrid(columns: columns, alignment: .center, spacing: 6, pinnedViews: [.sectionHeaders], content: {
                 Section(header:
                             Text("Section 1")
                             .foregroundColor(.white)
