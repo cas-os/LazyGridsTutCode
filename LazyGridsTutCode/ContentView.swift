@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let columns: [GridItem] = [
+        GridItem(.fixed(250), spacing: nil, alignment: nil)
+    ]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        LazyVGrid(columns: columns) {
+            Rectangle()
+            Rectangle()
+            Rectangle()
+            Rectangle()
+            Rectangle()
+            Rectangle()
+            Rectangle()
+            
+        }
     }
 }
 
