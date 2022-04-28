@@ -10,19 +10,23 @@ import SwiftUI
 struct ContentView: View {
     
     let columns: [GridItem] = [
-        GridItem(.fixed(250), spacing: nil, alignment: nil)
+        GridItem(.flexible(), spacing: nil, alignment: nil),
+        GridItem(.flexible(), spacing: nil, alignment: nil),
+        GridItem(.flexible(), spacing: nil, alignment: nil),
+        GridItem(.flexible(), spacing: nil, alignment: nil),
     ]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
+        ScrollView {
             Rectangle()
-            Rectangle()
-            Rectangle()
-            Rectangle()
-            Rectangle()
-            Rectangle()
-            Rectangle()
-            
+                .fill(Color.white)
+                .frame(height: 240)
+            LazyVGrid(columns: columns) {
+                ForEach(0..<50) { index in
+                    Rectangle()
+                        .frame(height: 115)
+                }
+            }
         }
     }
 }
